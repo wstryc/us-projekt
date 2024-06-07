@@ -12,7 +12,7 @@ DB_SERVER='us-project-server.database.windows.net'
 
 # Configure the SQLAlchemy part of the app instance
 app.config['SQLALCHEMY_DATABASE_URI'] = (
-    'mssql+pyodbc://{username}:{password}@{server}/{database}?driver=ODBC+Driver+17+for+SQL+Server'
+    'mssql+pyodbc://{username}:{password}@{server}/{database}?driver=ODBC+Driver+18+for+SQL+Server'
     .format(
         username=DB_USERNAME,
         password=DB_PASSWORD,
@@ -27,19 +27,24 @@ db = SQLAlchemy(app)
 # Define the Doctor model
 class Doctor(db.Model):
     __tablename__ = 'Doctors'
-    DoctorID = db.Column(db.Integer, primary_key=True)
+    Id = db.Column(db.Integer, primary_key=True)
     FirstName = db.Column(db.String(50))
     LastName = db.Column(db.String(50))
     Specialty = db.Column(db.String(100))
     PhoneNumber = db.Column(db.String(15))
     Email = db.Column(db.String(100))
 
-# Define a route for the root URL of the web application
+# Landing page
 @app.route('/')
-def hello_world():
+def introduction():
+    return render_template('introduction.html')
+# Doctors page
+@app.route('/doctors')
+def doctors():
     doctors = Doctor.query.all()
     return render_template('doctors.html', doctors=doctors)
 
 # Run the Flask application
 if __name__ == '__main__':
+    app.debug = True
     app.run()
