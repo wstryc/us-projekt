@@ -27,10 +27,26 @@
         .specialty {
             color: #6c757d;
         }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <h1>Lekarze</h1>
+    <h1>List of Doctors</h1>
+    <a href="/" class="button">Back to Home</a>
     <ul>
         {% for doctor in doctors %}
         <li>
