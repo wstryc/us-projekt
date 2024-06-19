@@ -3,38 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System rejestracji pacjentów</title>
+    <title>Super Klinika</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            padding: 20px;
-            text-align: center;
+            font-family: Tahoma;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-size: cover;
+            background-color: rgb(165, 213, 255);
         }
-        h1 {
-            color: #343a40;
-        }
-        p {
-            color: #6c757d;
-        }
-        .button {
-            background-color: #007bff;
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 1em 0;
+            background-color: rgba(82,117,143,0.8);
             color: white;
-            padding: 15px 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 10px;
+            font-size: 2em;
+            flex: 1;
+            text-align: left;
+        }
+        .contact-info {
+            margin-right: 1em;
+            text-align: right;
+            font-size: 0.9em;
+        }
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
+            margin: 2em;
+        }
+        .about-us {
+            width: 30%;
+            padding: 2em;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-left: 2em;
+        }
+        .container {
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px 2px;
+            padding: 2em;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            flex: 1;
+        }
+        .container h2 {
+            font-size: 2.5em;
+            margin-bottom: 1em;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+        button {
+            padding: 1em 2em;
+            font-size: 1em;
+            border: none;
             cursor: pointer;
+            background-color: #6db4ff;
+            color: white;
             border-radius: 5px;
+        }
+        button:hover {
+            background-color: #3d76b3;
+        }
+        footer {
+            width: 100%;
+            padding: 1em 0;
+            background-color: rgba(82,117,143,0.8);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            bottom: 0;
+        }
+        .footer-address {
+            margin-left: 1em;
+            font-size: 0.9em;
+        }
+        .footer-contact-info {
+            margin-right: 1em;
+            text-align: right;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <h1>Super Klinika</h1>
-    <p>test</p>
-    <a href="/doctors" class="button">Lekarze</a>
-    <a href="/patients" class="button">Pacjenci</a>
+    <header>
+        <h1> Super Klinika</h1>
+        <div class="contact-info">
+            <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
+            <p>123 Health St, Wellness City</p>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="container">
+            <h2>Super Klinika</h2>
+            <p>Nasz Zespół</p>
+            <div class="button-container">
+                <button onclick="location.href='doctors.html'">Lekarze</button>
+            </div>
+            <p>Nasi pacjenci</p>
+            <div class="button-container">
+                <button onclick="location.href='patients.html'">Pacjenci</button>
+            </div>
+            <p>Umów wizytę</p>
+            <div class="button-container">
+                <button onclick="location.href='wizyty.html'">Wizyty</button>
+            </div>
+        </div>
+        <div class="about-us">
+            <h2>O nas</h2>
+            <p>Witamy w Super Klinice, gdzie Twoje zdrowie i dobre samopoczucie są naszymi najwyższymi priorytetami. Nasza klinika jest poświęcona świadczeniu wyjątkowej opieki medycznej w przyjaznym i gościnnym środowisku. Wierzymy w holistyczne podejście do zdrowia, zapewniając naszym pacjentom kompleksową i spersonalizowaną opiekę.</p>
+            <h2>Nasza Misja</h2>
+            <p>Naszą misją w Super Klinice jest dostarczanie usług medycznych najwyższej jakości, które odpowiadają na unikalne potrzeby każdego pacjenta. Dążymy do promowania zdrowia, zapobiegania chorobom i zapewniania skutecznych terapii, aby poprawić jakość Twojego życia.</p>
+            <h2>Nasz Zespół</h2>
+            <p>Nasza klinika zatrudnia zespół wysoko wykwalifikowanych i doświadczonych profesjonalistów, którzy z pasją podchodzą do Twojego zdrowia. Od przyjaznej obsługi recepcji po kompetentnych lekarzy i pielęgniarki, każdy członek naszego zespołu jest zaangażowany w to, aby Twoja wizyta była jak najbardziej komfortowa i efektywna. Nasi specjaliści stale śledzą najnowsze osiągnięcia i techniki medyczne, aby zapewnić Ci najlepszą możliwą opiekę.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-address">
+            <p>123 Health St, Wellness City</p>
+        </div>
+        <div class="footer-contact-info">
+            <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
+        </div>
+    </footer>
 </body>
 </html>
