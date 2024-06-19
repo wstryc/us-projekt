@@ -6,9 +6,33 @@
     <title>Register Patient</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Tahoma;
             background-color: #f8f9fa;
             padding: 20px;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 1em 0;
+            background-color: rgba(82,117,143,0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 10px;
+            font-size: 2em;
+            flex: 1;
+            text-align: left;
+            color: white;
+        }
+        .contact-info {
+            margin-right: 1em;
+            text-align: right;
+            font-size: 0.9em;
         }
         form {
             background-color: #ffffff;
@@ -31,47 +55,87 @@
             border-radius: 5px;
         }
         button {
-            background-color: #007bff;
+            background-color: rgba(82,117,143,0.8);
             color: white;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 5px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
             cursor: pointer;
+            border-radius: 5px;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #3b5a7a;
+        }
+        footer {
+            width: 100%;
+            padding: 1em 0;
+            background-color: rgba(82,117,143,0.8);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            bottom: 0;
+        }
+        .footer-address {
+            margin-left: 1em;
+            font-size: 0.9em;
+        }
+        .footer-contact-info {
+            margin-right: 1em;
+            text-align: right;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <h1>Register Patient</h1>
+    <header>
+        <h1> Super Klinika</h1>
+        <div class="contact-info">
+            <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
+            <p>123 Health St, Wellness City</p>
+        </div>
+    </header>
+    <h1>Zarejestruj pacjenta</h1>
     <form action="/register_patient" method="post">
-        <label for="first_name">First Name:</label>
+        <label for="first_name">Imię:</label>
         <input type="text" id="first_name" name="first_name" required>
         
-        <label for="last_name">Last Name:</label>
+        <label for="last_name">Nazwisko:</label>
         <input type="text" id="last_name" name="last_name" required>
         
-        <label for="date_of_birth">Date of Birth:</label>
+        <label for="date_of_birth">Data urodzenia:</label>
         <input type="date" id="date_of_birth" name="date_of_birth" required>
         
-        <label for="gender">Gender:</label>
+        <label for="gender">Płeć:</label>
         <select id="gender" name="gender" required>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
+            <option value="Male">Męczyzna</option>
+            <option value="Female">Kobieta</option>
+            <option value="Other">Inna</option>
         </select>
         
-        <label for="phone_number">Phone Number:</label>
+        <label for="phone_number">Numer telefonu:</label>
         <input type="text" id="phone_number" name="phone_number" required>
         
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         
-        <label for="address">Address:</label>
+        <label for="address">Adres:</label>
         <input type="text" id="address" name="address" required>
         
-        <button type="submit">Register</button>
+        <button type="submit">Zarejestruj</button>
     </form>
+    <footer>
+        <div class="footer-address">
+            <p>123 Health St, Wellness City</p>
+        </div>
+        <div class="footer-contact-info">
+            <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
+        </div>
+    </footer>
 </body>
 </html>
