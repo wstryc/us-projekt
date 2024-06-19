@@ -10,6 +10,30 @@
             background-color: #f8f9fa;
             padding: 20px;
         }
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 1em 0;
+            background-color: rgba(82,117,143,0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 10px;
+            font-size: 2em;
+            flex: 1;
+            text-align: left;
+            color: white;
+        }
+        .contact-info {
+            margin-right: 1em;
+            text-align: right;
+            font-size: 0.9em;
+        }
         h1 {
             color: #343a40;
         }
@@ -26,7 +50,7 @@
             background-color: #f2f2f2;
         }
         .button {
-            background-color: #007bff;
+            background-color: rgba(82,117,143,0.8);
             color: white;
             padding: 10px 20px;
             text-align: center;
@@ -38,7 +62,7 @@
             border-radius: 5px;
         }
         .button:hover {
-            background-color: #0056b3;
+            background-color: #3b5a7a;
         }
         .button-danger {
             background-color: #dc3545;
@@ -46,12 +70,40 @@
         .button-danger:hover {
             background-color: #c82333;
         }
+        footer {
+            width: 100%;
+            padding: 1em 0;
+            background-color: rgba(82,117,143,0.8);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            bottom: 0;
+        }
+        .footer-address {
+            margin-left: 1em;
+            font-size: 0.9em;
+        }
+        .footer-contact-info {
+            margin-right: 1em;
+            text-align: right;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
-    <h1>List of Patients</h1>
-    <a href="/" class="button">Back to Home</a>
-    <a href="/register_patient" class="button">Register New Patient</a>
+    <header>
+        <h1> Super Klinika</h1>
+        <div class="contact-info">
+            <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
+            <p>123 Health St, Wellness City</p>
+        </div>
+    </header>
+    <h1>Lista Pacjentów</h1>
+    <a href="/" class="button">Wróć</a>
+    <a href="/register_patient" class="button">Zarejestruj pacjenta</a>
     <table>
         <thead>
             <tr>
@@ -82,5 +134,13 @@
             {% endfor %}
         </tbody>
     </table>
+    <footer>
+        <div class="footer-address">
+            <p>123 Health St, Wellness City</p>
+        </div>
+        <div class="footer-contact-info">
+            <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
+        </div>
+    </footer>
 </body>
 </html>
