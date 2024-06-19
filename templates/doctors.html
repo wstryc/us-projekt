@@ -6,9 +6,33 @@
     <title>List of Doctors</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Tahoma;
             background-color: #f8f9fa;
             padding: 20px;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 1em 0;
+            background-color: rgba(82,117,143,0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 10px;
+            font-size: 2em;
+            flex: 1;
+            text-align: left;
+            color: white;
+        }
+        .contact-info {
+            margin-right: 1em;
+            text-align: right;
+            font-size: 0.9em;
         }
         h1 {
             color: #343a40;
@@ -28,7 +52,7 @@
             color: #6c757d;
         }
         .button {
-            background-color: #007bff;
+            background-color: rgba(82,117,143,0.8);
             color: white;
             padding: 10px 20px;
             text-align: center;
@@ -40,11 +64,39 @@
             border-radius: 5px;
         }
         .button:hover {
-            background-color: #0056b3;
+            background-color: #3b5a7a;
+        }
+        footer {
+            width: 100%;
+            padding: 1em 0;
+            background-color: rgba(82,117,143,0.8);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            bottom: 0;
+        }
+        .footer-address {
+            margin-left: 1em;
+            font-size: 0.9em;
+        }
+        .footer-contact-info {
+            margin-right: 1em;
+            text-align: right;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1> Super Klinika</h1>
+        <div class="contact-info">
+            <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
+            <p>123 Health St, Wellness City</p>
+        </div>
+    </header>
     <h1>List of Doctors</h1>
     <a href="/" class="button">Back to Home</a>
     <ul>
@@ -57,5 +109,13 @@
         </li>
         {% endfor %}
     </ul>
+    <footer>
+        <div class="footer-address">
+            <p>123 Health St, Wellness City</p>
+        </div>
+        <div class="footer-contact-info">
+            <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
+        </div>
+    </footer>
 </body>
 </html>
