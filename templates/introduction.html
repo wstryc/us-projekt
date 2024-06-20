@@ -70,6 +70,7 @@
             display: flex;
             justify-content: center;
             gap: 1em;
+            flex-wrap: wrap;
         }
         button {
             padding: 1em 2em;
@@ -117,17 +118,12 @@
     <div class="main-content">
         <div class="container">
             <h2>Super Klinika</h2>
-            <p>Nasz Zespół</p>
             <div class="button-container">
                 <button onclick="location.href='/doctors'">Lekarze</button>
-            </div>
-            <p>Nasi pacjenci</p>
-            <div class="button-container">
                 <button onclick="location.href='/patients'">Pacjenci</button>
-            </div>
-            <p>Umów wizytę</p>
-            <div class="button-container">
-                <button onclick="location.href='/register_patient'">Wizyty</button>
+                <button onclick="location.href='/appointments'">Wizyty</button>
+                <button onclick="location.href='/register_patient'">Zarejestruj Pacjenta</button>
+                <button onclick="location.href='/register_appointment'">Zarejestruj Wizytę</button>
             </div>
         </div>
         <div class="about-us">

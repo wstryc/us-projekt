@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Patients</title>
+    <title>Update Patient</title>
     <style>
         body {
             font-family: Tahoma;
@@ -34,22 +34,27 @@
             text-align: right;
             font-size: 0.9em;
         }
-        h1 {
-            color: #343a40;
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        table {
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        select {
             width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
             padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        th {
-            background-color: #f2f2f2;
-        }
-        .button {
+        button {
             background-color: rgba(82,117,143,0.8);
             color: white;
             padding: 10px 20px;
@@ -61,14 +66,8 @@
             cursor: pointer;
             border-radius: 5px;
         }
-        .button:hover {
+        button:hover {
             background-color: #3b5a7a;
-        }
-        .button-danger {
-            background-color: #dc3545;
-        }
-        .button-danger:hover {
-            background-color: #c82333;
         }
         footer {
             width: 100%;
@@ -99,49 +98,4 @@
         <div class="contact-info">
             <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
             <p>123 Health St, Wellness City</p>
-        </div>
-    </header>
-    <h1>Lista Pacjentów</h1>
-    <a href="/" class="button">Wróć</a>
-    <a href="/register_patient" class="button">Zarejestruj pacjenta</a>
-    <table>
-        <thead>
-            <tr>
-                <th>Imię</th>
-                <th>Nazwisko</th>
-                <th>Data urodzenia</th>
-                <th>Płeć</th>
-                <th>Numer telefonu</th>
-                <th>Email</th>
-                <th>Addres</th>
-                <th>Akcje</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for patient in patients %}
-            <tr>
-                <td>{{ patient.FirstName }}</td>
-                <td>{{ patient.LastName }}</td>
-                <td>{{ patient.DateOfBirth }}</td>
-                <td>{{ patient.Gender }}</td>
-                <td>{{ patient.PhoneNumber }}</td>
-                <td>{{ patient.Email }}</td>
-                <td>{{ patient.Address }}</td>
-                <td>
-                    <a href="/update_patient/{{ patient.Id }}" class="button">Edit</a>
-                    <a href="/delete_patient/{{ patient.Id }}" class="button button-danger">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <footer>
-        <div class="footer-address">
-            <p>123 Health St, Wellness City</p>
-        </div>
-        <div class="footer-contact-info">
-            <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
-        </div>
-    </footer>
-</body>
-</html>
+        </di

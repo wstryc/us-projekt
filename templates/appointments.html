@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Patients</title>
+    <title>List of Appointments</title>
     <style>
         body {
             font-family: Tahoma;
@@ -101,35 +101,32 @@
             <p>123 Health St, Wellness City</p>
         </div>
     </header>
-    <h1>Lista Pacjentów</h1>
+    <h1>Lista Wizyt</h1>
     <a href="/" class="button">Wróć</a>
-    <a href="/register_patient" class="button">Zarejestruj pacjenta</a>
+    <a href="/register_appointment" class="button">Zarejestruj wizytę</a>
     <table>
         <thead>
             <tr>
-                <th>Imię</th>
-                <th>Nazwisko</th>
-                <th>Data urodzenia</th>
-                <th>Płeć</th>
-                <th>Numer telefonu</th>
-                <th>Email</th>
-                <th>Addres</th>
+                <th>Pacjent</th>
+                <th>Doktor</th>
+                <th>Data rozpoczęcia</th>
+                <th>Data zakończenia</th>
+                <th>Status</th>
+                <th>Powód wizyty</th>
                 <th>Akcje</th>
             </tr>
         </thead>
         <tbody>
-            {% for patient in patients %}
+            {% for appointment in appointments %}
             <tr>
-                <td>{{ patient.FirstName }}</td>
-                <td>{{ patient.LastName }}</td>
-                <td>{{ patient.DateOfBirth }}</td>
-                <td>{{ patient.Gender }}</td>
-                <td>{{ patient.PhoneNumber }}</td>
-                <td>{{ patient.Email }}</td>
-                <td>{{ patient.Address }}</td>
+                <td>{{ appointment.patient.FirstName }} {{ appointment.patient.LastName }}</td>
+                <td>{{ appointment.doctor.FirstName }} {{ appointment.doctor.LastName }}</td>
+                <td>{{ appointment.AppointmentDateTimeStart }}</td>
+                <td>{{ appointment.AppointmentDateTimeEnd }}</td>
+                <td>{{ appointment.status.StatusDescription }}</td>
+                <td>{{ appointment.ReasonForVisit }}</td>
                 <td>
-                    <a href="/update_patient/{{ patient.Id }}" class="button">Edit</a>
-                    <a href="/delete_patient/{{ patient.Id }}" class="button button-danger">Delete</a>
+                    <a href="/delete_appointment/{{ appointment.Id }}" class="button button-danger">Delete</a>
                 </td>
             </tr>
             {% endfor %}
