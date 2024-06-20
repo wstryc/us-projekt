@@ -98,4 +98,44 @@
         <div class="contact-info">
             <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
             <p>123 Health St, Wellness City</p>
-        </di
+        </div>
+    </header>
+    <h1>Aktualizuj dane pacjenta</h1>
+    <form action="/update_patient/{{ patient.Id }}" method="post">
+        <label for="first_name">Imię:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ patient.FirstName }}" required>
+        
+        <label for="last_name">Nazwisko:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ patient.LastName }}" required>
+        
+        <label for="date_of_birth">Data urodzenia:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" value="{{ patient.DateOfBirth.strftime('%Y-%m-%d') }}" required>
+        
+        <label for="gender">Płeć:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male" {% if patient.Gender == 'Male' %}selected{% endif %}>Mężczyzna</option>
+            <option value="Female" {% if patient.Gender == 'Female' %}selected{% endif %}>Kobieta</option>
+            <option value="Other" {% if patient.Gender == 'Other' %}selected{% endif %}>Inna</option>
+        </select>
+        
+        <label for="phone_number">Numer telefonu:</label>
+        <input type="text" id="phone_number" name="phone_number" value="{{ patient.PhoneNumber }}" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ patient.Email }}" required>
+        
+        <label for="address">Adres:</label>
+        <input type="text" id="address" name="address" value="{{ patient.Address }}" required>
+        
+        <button type="submit">Aktualizuj</button>
+    </form>
+    <footer>
+        <div class="footer-address">
+            <p>123 Health St, Wellness City</p>
+        </div>
+        <div class="footer-contact-info">
+            <p>Kontakt: +123 456 7890 | Email: info@superklinika.com</p>
+        </div>
+    </footer>
+</body>
+</html>
