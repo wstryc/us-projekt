@@ -136,6 +136,28 @@ def delete_appointment(appointment_id):
     db.session.commit()
     return redirect(url_for('list_appointments'))
 
+# Define a route to update an appointment
+@app.route('/update_appointment/<int:appointment_id>', methods=['GET', 'POST'])
+def update_appointment(appointment_id):
+    appointment = Appointment.query.get(appointment_id)
+    patients = Patient.query.all()
+    doctors = Doctor.query.all()
+    statuses = AppointmentStatus.query.all()
+    if not appointment:
+        return "Appointment not found", 404
+    if request.method == 'POST':
+        appointment.PatientID = request.form['patient_id']
+        appointment.DoctorID = request.form['doctor_id']
+        appointment.AppointmentDateTimeStart = datetime.strptime(request.form['appointment_start'], '%Y-%m-%dT%H:%M')
+        appointment.AppointmentDateTimeEnd = datetime.strptime(request.form['appointment_end'], '%Y-%m-%dT%H:%M')
+        appointment.StatusID = request.form['status_id']
+        appointment.ReasonForVisit = request.form['reason']
+        
+        db.session.commit()
+        return redirect(url_for('list_appointments'))
+    return render_template('update_appointment.html', appointment=appointment, patients=patients, doctors=doctors, statuses=statuses)
+
+
 # Run the Flask application
 if __name__ == '__main__':
     app.debug = True

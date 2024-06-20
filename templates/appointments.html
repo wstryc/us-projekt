@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Appointments</title>
+    <title>Wizyty</title>
     <style>
         body {
             font-family: Tahoma;
@@ -126,7 +126,8 @@
                 <td>{{ appointment.status.StatusDescription }}</td>
                 <td>{{ appointment.ReasonForVisit }}</td>
                 <td>
-                    <a href="/delete_appointment/{{ appointment.Id }}" class="button button-danger">Delete</a>
+                    <a href="/update_appointment/{{ appointment.Id }}" class="button">Edytuj</a>
+                    <a href="/delete_appointment/{{ appointment.Id }}" class="button button-danger">Usuń</a>
                 </td>
             </tr>
             {% endfor %}
